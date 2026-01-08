@@ -1,37 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Voxel Architect v4.1 - Sync Update</title>
-    <style>
-        body { margin: 0; background: #000; overflow: hidden; font-family: 'Courier New', monospace; }
-        #input_video { position: absolute; width: 100vw; height: 100vh; object-fit: cover; transform: scaleX(-1); z-index: 1; }
-        #three_canvas { position: absolute; top: 0; left: 0; z-index: 5; pointer-events: none; }
-        #biometric_canvas { position: absolute; width: 100vw; height: 100vh; z-index: 10; transform: scaleX(-1); pointer-events: none; }
-        #ui { 
-            position: absolute; top: 20px; left: 20px; z-index: 100;
-            color: #00f0ff; font-weight: bold; font-size: 14px;
-            text-shadow: 0 0 10px #00f0ff; border-left: 3px solid #00f0ff; padding-left: 15px;
-            background: rgba(0,0,0,0.6); padding: 15px;
-        }
-        .stat-val { color: #fff; }
-    </style>
-</head>
-<body>
-    <div id="ui">
-        <div>BIO_SYNC: ARCHITECT_OS_v4.1</div>
-        <div>STATE: <span id="mode" class="stat-val">INITIALIZING</span></div>
-        <div>VOXELS: <span id="count" class="stat-val">0</span></div>
-        <div style="font-size: 10px; margin-top: 5px; color: #ff3333;">2 FISTS: HOLD TO RESET | 2 PALMS: HOLD TO ROTATE</div>
-    </div>
 
-    <video id="input_video" autoplay playsinline></video>
-    <canvas id="three_canvas"></canvas>
-    <canvas id="biometric_canvas"></canvas>
 
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+VolexScratch
+
+Um editor de voxels 3D controlado por gestos, construído do zero para a web.
+Sem runtime Python. Sem backend com OpenCV. Apenas HTML + CSS + JavaScript puro + Three.js.
+
+Este projeto explora até onde a interação em tempo real pode ir diretamente dentro do navegador.
+
+
+---
+
+✨ Funcionalidades
+
+🖐️ Interação em tempo real por gestos da mão
+
+🧊 Criação e manipulação de voxels em 3D
+
+🔄 Rotação, movimento e reset baseados em gestos
+
+🧠 Lógica própria de reconhecimento de gestos (sem dependência de OpenCV)
+
+🌐 Executa totalmente no navegador
+
+⚡ Otimizado para desempenho suave em tempo real
+
+
+
+---
+
+🛠 Stack Tecnológica
+
+HTML5 – Estrutura
+
+CSS3 – Estilização da interface
+
+JavaScript (Vanilla) – Lógica principal
+
+Three.js – Renderização 3D
+
+Web APIs – Interação em tempo real
+
+
+> Sem Python. Sem servidor. Sem frameworks. Tudo roda localmente no navegador.
+
+
+
+
+---
+
+Se quiser, dá pra:
+
+deixar mais técnico (estilo paper)
+
+deixar mais agressivo (estilo hacker README)
+
+ou adaptar pra portfólio profissional sem parecer tutorial de iniciante
+
+
+Mas por enquanto, isso já está decente o suficiente pra não passar vergonha.    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
     <script>
         const videoElement = document.getElementById('input_video');
